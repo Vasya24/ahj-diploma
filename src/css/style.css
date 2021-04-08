@@ -6,6 +6,7 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
   color: #000000;
+  background-color: #222221;
 }
 
 input:active,
@@ -176,7 +177,8 @@ button {
   height: 500px;
   max-height: calc(100vh - 200px);
   padding: 20px;
-  background-image: url('../img/wall.png');
+  background-color: #0e1621;
+  /* background-image: url('../img/wall.png'); */
 }
 
 .chat-container {
@@ -194,6 +196,8 @@ button {
   padding: 10px;
   border: 1px solid #C0C0C0;
   border-radius: 15px;
+  background-color: #2b5278;
+  color: #e4eccb;
 }
 
 .message:nth-child(n+2) {
