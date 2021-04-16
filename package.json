@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint .",
-    "test": "jest --passWithNoTests",
+    "test": "jest --coverage",
     "doc": "jsdoc -c jsdoc.conf.json"
   },
   "repository": {
