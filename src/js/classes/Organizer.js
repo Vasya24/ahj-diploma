@@ -2,7 +2,7 @@ import OrganizerForm from './OrganizerForm';
 import Chat from './Chat';
 
 /**
- * Chaos Organizer Widget for saving and sorting user info, loading files and responsing to commands
+ * Organizer Widget for saving and sorting user info, loading files and responsing to commands
  *
  * @example
  * const organizer = new Organizer();

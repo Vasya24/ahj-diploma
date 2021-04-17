@@ -1,24 +1,21 @@
 /**
- * Chat Bot. Users can interact with bot by sending commands starting with '@chaos'.
+ * Chat Bot. Users can interact with bot by sending commands starting with '@robot'.
  *
  * @example
  * const bot = new Bot();
- * bot.sendRequest('@chaos: погода');
+ * bot.sendRequest('@robot: погода');
  */
 class Bot {
   constructor() {
     this.container = document.querySelector('.chat-container');
     this.weather = [
       'Облачно, с прояснениями',
-      'В ближайшие 2 часа осадков не ожидается',
-      'Будет преобладать юго-западный ветер, 1–2 м/с',
-      'Пасмурно, местами небольшие дожди',
-      'Атмосферное давление в пределах нормы (748—750 мм рт.ст.)',
-      'Погода ожидается облачная и очень холодная',
-      'Температура воздуха 8-10°C',
-      'Ближе к вечеру ожидаются кратковременные грозы',
-      'Солнечно, воздух прогреется до +28°С',
-      'Сегодня теплее, чем вчера',
+      'Гроза, местами град',
+      'Ближе к вечеру ожидаются кратковременные кислотные дожди',
+      'Ветер северо-западный, порывистый, до 8 м/с',
+      'Солнечно, без осадков, температура воздуха 25-27°C',
+      'Утром вероятно наводнение',
+      'Местами метеоритный дождь, к вечеру возможен Апокалипсис'
     ];
     this.rates = [
       'USD: 73.9735, EUR: 89.2546',
@@ -27,29 +24,18 @@ class Bot {
       'USD: 74.5157, EUR: 90.8123',
       'USD: 73.8757, EUR: 89.2546',
     ];
-    this.oracle = [
-      'Перспективы хорошие',
-      'Определенно, да',
-      'Подумай и спроси опять',
-      'Весьма спорно',
-      'Мой ответ - нет',
-      'Вероятнее всего',
-    ];
     this.todo = [
-      'Подготовиться к экзамену',
-      'Выучить новые слова',
-      'Сходить на тренировку',
-      'Записаться к врачу',
-      'Сделать генеральную уборку',
-      'Пройти 10000 шагов',
-      'Прочитать книгу',
-      'Посмотреть лекцию',
+      'Похудеть',
+      'Купить коляску',
+      'Купить новый лоток котам',
+      'Изучить JS и React',
+      'Подготовиться к поступлению',
+      'Сдать на права',
     ];
     this.notifications = [
-      'День рождения мамы через 3 дня',
-      'Заплатить за квартиру завтра',
-      'Новый год через 5 дней',
-      'Платеж по кредитной карте сегодня',
+      'Отменить автозаказ на Petshop',
+      'Починить сервер СКУД на работе',
+      'Вернуть билет',
       'Ближайших напоминаний нет',
     ];
   }
@@ -60,7 +46,7 @@ class Bot {
    */
   sendRequest(request) {
     this.printMessage(request);
-    const requestBody = request.replace(/^@chaos: /, '');
+    const requestBody = request.replace(/^@robot: /, '');
 
     switch (requestBody) {
       case 'погода':
@@ -71,9 +57,6 @@ class Bot {
         break;
       case 'список дел':
         this.printMessage(this.todo[Math.floor(Math.random() * (this.todo.length))], 'bot');
-        break;
-      case 'магический шар':
-        this.printMessage(this.oracle[Math.floor(Math.random() * (this.oracle.length))], 'bot');
         break;
       case 'напоминания':
         this.printMessage(this.notifications[Math.floor(Math.random() * (this.notifications.length))], 'bot');

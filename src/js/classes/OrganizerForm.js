@@ -61,7 +61,7 @@ class OrganizerForm {
         event.preventDefault();
         if (document.querySelector('.geolocation-form-active')) return;
         if (this.input.value !== '') {
-          const commandRegex = /^@chaos:/;
+          const commandRegex = /^@robot:/;
           if (this.input.value.search(commandRegex) !== -1) {
             this.bot.sendRequest(this.input.value);
             this.input.value = '';
